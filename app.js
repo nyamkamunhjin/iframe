@@ -12,10 +12,7 @@ app.use((req, res, next) => {
   const cookie = req.cookies.cloudmnCookie;
 
   if (!cookie) {
-    res.cookie('cloudmnCookie', 'hello', {
-      domain: 'ngrok.io',
-      maxAge: 900000,
-    });
+    res.cookie('cloudmnCookie', 'hello', {});
     console.log('cookie created successfully');
   } else {
     console.log('cookie exists', cookie);
