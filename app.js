@@ -3,7 +3,7 @@ const cookieParser = require('cookie-parser');
 const app = express();
 const path = require('path');
 const { nextTick } = require('process');
-const port = 1337;
+const port = 80;
 
 app.use(cookieParser());
 app.use(express.static('public'));
