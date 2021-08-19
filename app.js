@@ -2,8 +2,7 @@ const express = require('express');
 const cookieParser = require('cookie-parser');
 const app = express();
 const path = require('path');
-const { nextTick } = require('process');
-const port = 80;
+require('dotenv').config();
 
 app.use(cookieParser());
 app.use(express.static('public'));
@@ -27,6 +26,6 @@ app.get('/', (req, res) => {
   res.sendFile(path.join(__dirname, 'iframe/button.html'));
 });
 
-app.listen(port, () => {
-  console.log(`Example app listening at http://localhost:${port}`);
+app.listen(process.env.PORT, () => {
+  console.log(`Example app listening at http://localhost:${process.env.PORT}`);
 });
