@@ -11,7 +11,10 @@ app.use((req, res, next) => {
   const cookie = req.cookies.cloudmnCookie;
 
   if (!cookie) {
-    res.cookie('cloudmnCookie', '0', {});
+    res.cookie('cloudmnCookie', '0', {
+      sameSite: 'none',
+      secure: true,
+    });
     console.log('cookie created successfully');
   } else {
     res.cookie('cloudmnCookie', `${parseInt(cookie, 10) + 1}`, {});
