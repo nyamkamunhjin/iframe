@@ -27,7 +27,7 @@ app.use((req, res, next) => {
 });
 
 app.get('/', (req, res) => {
-  res.sendFile(path.join(__dirname, 'public/cloudmn.png'));
+  res.sendFile(path.join(__dirname, 'iframe/button.html'));
 });
 
 app.listen(process.env.PORT, () => {
