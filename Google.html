@@ -2,8 +2,22 @@
 <html>
 
 <body>
-  <iframe src="http://b7ba80902759.ngrok.io/" title="Powered by Cloud.mn" width="200px" height="60px" frameborder="0"
-    border="0" cellspacing="0" scrolling="no" style="overflow:hidden;" />
+  <!-- <iframe src="https://iframe-nyamkamunhjin.herokuapp.com/" title="Powered by Cloud.mn" width="200px" height="60px"
+    frameborder="0" border="0" cellspacing="0" scrolling="no" style="overflow:hidden;" /> -->
+  <a href="https://cloud.mn/" target="_blank"><img src="http://localhost:3000" width="200px" height="60px"
+      alt="Powered By Cloud.mn" /></a>
+
+  <script>
+    let a = document.createElement('A');
+    a.href = "https://cloud.mn/";
+    a.target = "_blank";
+    let b = document.createElement('IMG')
+    b.setAttribute("src", "http://localhost:3000")
+    b.setAttribute("alt", "Powered By Cloud.mn")
+
+    a.appendChild(b)
+    document.body.appendChild(a)
+  </script>
 </body>
 
 </html>

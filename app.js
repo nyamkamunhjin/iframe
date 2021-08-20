@@ -11,10 +11,10 @@ app.use((req, res, next) => {
   const cookie = req.cookies.cloudmnCookie;
 
   if (!cookie) {
-    res.cookie('cloudmnCookie', 'hello', {});
+    res.cookie('cloudmnCookie', '0', {});
     console.log('cookie created successfully');
   } else {
-    console.log('cookie exists', cookie);
+    res.cookie('cloudmnCookie', `${parseInt(cookie, 10) + 1}`, {});
   }
 
   console.log(req.get('Referer'));
@@ -23,7 +23,7 @@ app.use((req, res, next) => {
 });
 
 app.get('/', (req, res) => {
-  res.sendFile(path.join(__dirname, 'iframe/button.html'));
+  res.sendFile(path.join(__dirname, 'public/cloudmn.png'));
 });
 
 app.listen(process.env.PORT, () => {
