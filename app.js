@@ -13,6 +13,7 @@ app.use((req, res, next) => {
   if (!cookie) {
     res.cookie('cloudmnCookie', '0', {
       sameSite: 'none',
+      domain: '.herokuapp.com',
       secure: true,
     });
     console.log('cookie created successfully');
